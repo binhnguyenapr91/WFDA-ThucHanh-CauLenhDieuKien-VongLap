@@ -1,9 +1,9 @@
 import "./scss/styles.scss";
 
 /**
- * If/else
+ * if/else
  */
-
+console.log('IF/ELSE');
 let count = 50;
 if (count > 0) {
   count--;
@@ -13,41 +13,60 @@ if (count > 0) {
 console.log(count);
 
 /**
- * loop
+ * for loops
  */
 
-console.log("for loop");
-
-const keys = "abcdef";
-for (let idx = 0; idx < keys.length; ++idx) {
-  console.log(keys[idx]);
+console.log('FOR LOOP');
+const keys = 'BINHNGUYEN';
+let index = 0;
+for (index; index < keys.length; index++) {
+  console.log(keys[index]);
 }
 
-console.log("while loop");
-let idx = 0;
-while (idx < keys.length) {
-  console.log(keys[idx]);
-  ++idx;
+/**
+ * while loops
+ */
+
+console.log('WHILE LOOP');
+index = 0;
+
+while(index<keys.length){
+  console.log(keys[index]);
+  ++index;
 }
 
-console.log("do-while loop");
+/**
+ * do-while loops
+ */
 
-idx = 0;
-do {
-  console.log(keys[idx]);
-  ++idx;
-} while (idx < keys.length);
+ console.log('DO WHILE LOOP');
 
-console.log("for-of loop");
-for (const item of keys) {
-  console.log(item);
-}
+ index = 0;
+ do{
+   console.log(keys[index]);
+   index++;
+ }while(index<keys.length);
 
-console.log("for-in loop");
-const user = {
-  name: 'Bob',
-  age: 55
-};
-for (const key in user) {
-  console.log(`${key}: ${user[key]}`);
-}
+ /**
+  * for of loops
+  */
+
+  console.log('FOR OF LOOP');
+  for(let item of keys){
+    console.log(item);
+  }
+
+  /**
+   * for in loop
+   */
+
+   console.log('FOR IN LOOP');
+
+   const user = {
+     name: 'BINHNGUYEN',
+     age:'30'
+   };
+
+   for(const key in user){
+      console.log(`${key}:${user[key]}`);
+   }
