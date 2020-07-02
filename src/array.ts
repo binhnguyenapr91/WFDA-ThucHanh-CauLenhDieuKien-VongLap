@@ -1,33 +1,47 @@
 import './scss/styles.scss';
+import { filter } from 'lodash';
 /**
  * Array
  */
 
 // declare an array
-
 const list: number[] = [1, 2, 3];
 
-const categories: Array<string> =
-  ['Sport', 'IT', 'Car'];
-
+const cars: Array<string> = [
+  'Volvo',
+  'BMW',
+  'Toyota'
+];
 console.log('list');
-list.forEach((num) =>
-  console.log(num.toFixed(2))
-);
-
-console.log('categries');
-categories.forEach((str) =>
-  console.log(str.includes('a'))
-);
+for (const item of list) {
+  console.log(item.toFixed(2));
+};
+console.log('cars');
+for (const item of cars) {
+  console.log(item.includes('o'));
+};
 
 // convert mảng từ dạng này sang dạng khác.
-const listSquare = list.map(num => num * num);
-console.log(listSquare)
+// using normal function
+let inputNumber;
+let converter = function (inputNumber: number) {
+  return inputNumber * inputNumber;
+}
+let convertList1: Array<number> = [];
+for (let item of list) {
+  convertList1.push(converter(item));
+}
+console.log(convertList1);
+// Output: [1, 4, 9]
+
+// using arrow function
+const convertList2 = list.map(number => number * number);
+console.log(convertList2);
 // Output: [1, 4, 9]
 
 // lọc các phần tử thỏa mãn
-const result = categories.filter(str => str.length > 2)
-console.log(result);
+const filteredCar = cars.filter(string => string.length > 3);
+console.log(filteredCar);
 // Output: ['Sport', 'Car']
 
 
@@ -36,20 +50,18 @@ console.log(result);
  */
 
 // Declare a tuple type
-let x: [string, number];
+let my_tuple: [number,string],string;
 // Initialize it
-x = ["hello", 10]; // OK
+my_tuple = [10,'hello world'];
+// OK
 // Initialize it incorrectly
-// x = [10, "hello"]; // Error
+//my_tuple = ['hi',999];
 
-console.log(x[0].substr(1)); // OK
-// console.log(x[1].substr(1));
+
+// OK
+console.log(my_tuple[1].substr);
 // Error, Property 'substr' does not exist on type 'number'.
+//console.log(my_tuple[0].substr)
 
-x[3] = "world";
-// OK, 'string' can be assigned to 'string | number'
-x[5] = 100.25;
-console.log(x[5].toString());
-// OK, 'string' and 'number' both have 'toString'
 
-// x[6] = true; // Error, 'boolean' isn't 'string | number'
+
