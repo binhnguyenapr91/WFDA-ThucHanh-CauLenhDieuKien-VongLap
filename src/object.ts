@@ -2,13 +2,27 @@ import './scss/styles.scss';
 
 interface IUser {
   name: string;
-  age: number
+  age: number;
+  say(): string;
 }
+
+class Customer implements IUser {
+  name: string;
+  age: number
+
+   say():string {
+      return "Hello World"
+   } 
+  }
+
+  let testCustomer = new Customer;
 
 let customer: IUser = {
   name: "Binhnguyen",
-  age: 30
-
+  age: 30,
+  say(): string {
+      return "Hello World";
+  }
 };
 
 console.log(customer);
@@ -44,5 +58,3 @@ const newRect = new Rect(2,2,20,30);
 
 console.log(newRect.toString);
 console.log(newRect.area());
-
-
