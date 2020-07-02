@@ -6,19 +6,18 @@ interface IUser {
 }
 
 let customer: IUser = {
-  name: 'Bob',
-  age: 50
+  name: "Binhnguyen",
+  age: 30
+
 };
 
 console.log(customer);
 
-/* customer = {
-  name: 'Anna'
-}; */
-/*
-* Error: Type '{ name: string; }' is not assignable to type 'IUser'.
-* Property 'age' is missing in type '{ name: string; }'.
-*/
+// extends vs implements
+
+interface IArea {
+  area(): number
+}
 
 class Shape {
   public x: number;
@@ -27,25 +26,23 @@ class Shape {
     this.x = x;
     this.y = y;
   }
-  toString(): string {
-    return `(x: ${this.x}, y: ${this.y})`;
+  toString(): String {
+    return `x=${this.x};y=${this.y}`;
   }
 }
 
-interface IArea {
-  area(): number;
-}
-
-class Rect extends Shape implements IArea {
-  constructor(x: number, y: number, public width: number, public height: number) {
-    super(x, y);
+class Rect extends Shape implements IArea{
+  constructor(x:number,y:number,public width :number, public height : number ){
+    super(x,y);
   }
-  area(): number {
-    return this.width * this.height;
+  area():number{
+    return this.width*this.height;
   }
 }
 
-const rect = new Rect(5, 5, 10, 20);
-console.log(rect.toString());
-console.log(rect.area());
+const newRect = new Rect(2,2,20,30);
+
+console.log(newRect.toString);
+console.log(newRect.area());
+
 

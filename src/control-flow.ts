@@ -1,7 +1,7 @@
 import "./scss/styles.scss";
 
 /**
- * if/else
+ * if/else condition
  */
 console.log('IF/ELSE');
 let count = 50;
@@ -70,3 +70,6 @@ while(index<keys.length){
    for(const key in user){
       console.log(`${key}:${user[key]}`);
    }
+
+
+   
